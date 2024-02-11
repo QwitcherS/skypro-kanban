@@ -31,13 +31,16 @@ function App() {
   }
 
   return (
-    <Wrapper>
-      <PopBrowse />
-      <PopNewCard />
-      <PopExit />
-      <Header addCard={addCard} />
-      <Main isLoaded={isLoaded} cardList={cards} />
-    </Wrapper>
+    <>
+      <GlobalStyle />
+      <Wrapper>
+        <PopBrowse />
+        <PopNewCard />
+        <PopExit />
+        <Header addCard={addCard} />
+        <Main isLoaded={isLoaded} cardList={cards} />
+      </Wrapper>
+    </>
   );
 }
 
