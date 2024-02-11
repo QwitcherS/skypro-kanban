@@ -1,6 +1,6 @@
 import Column from "../Column/Column";
 import { Container } from "../Common/Common.styled";
-
+import { MainBlock, MainContent, MainStyle } from "./Main.styeled";
 const statusList = [
   "Без статуса",
   "Нужно сделать",
@@ -11,10 +11,10 @@ const statusList = [
 
 function Main({ cardList, isLoaded }) {
   return (
-    <main className="main">
+    <MainStyle>
       <Container>
-        <div className="main__block">
-          <div className="main__content">
+        <MainBlock>
+          <MainContent>
             {isLoaded
               ? "Loading"
               : statusList.map((item) => (
@@ -24,10 +24,10 @@ function Main({ cardList, isLoaded }) {
                     cardList={cardList.filter((card) => card.status === item)}
                   />
                 ))}
-          </div>
-        </div>
+          </MainContent>
+        </MainBlock>
       </Container>
-    </main>
+    </MainStyle>
   );
 }
 export default Main;

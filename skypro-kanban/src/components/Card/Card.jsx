@@ -1,4 +1,6 @@
 import {
+  CardBtn,
+  CardBtnDiv,
   CardContent,
   CardDate,
   CardGroup,
@@ -29,6 +31,12 @@ function Card({ name, theme, date }) {
           <CardTheme $themeColor={color}>
             <CardThemeText>{theme}</CardThemeText>
           </CardTheme>
+          <a href="#popBrowse" target="_self">
+            <CardBtn>
+              <CardBtnDiv />
+              <CardBtnDiv />
+              <CardBtnDiv />
+            </CardBtn>
           </a>
         </CardGroup>
         <CardContent>
@@ -41,8 +49,7 @@ function Card({ name, theme, date }) {
               width={13}
               height={13}
               viewBox="0 0 13 13"
-              fill="none"
-            >
+              fill="none">
               <g clipPath="url(#clip0_1_415)">
                 <path
                   d="M10.5625 2.03125H2.4375C1.7644 2.03125 1.21875 2.5769 1.21875 3.25V10.5625C1.21875 11.2356 1.7644 11.7812 2.4375 11.7812H10.5625C11.2356 11.7812 11.7812 11.2356 11.7812 10.5625V3.25C11.7812 2.5769 11.2356 2.03125 10.5625 2.03125Z"

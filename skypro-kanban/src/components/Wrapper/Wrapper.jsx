@@ -1,4 +1,6 @@
+import { WrapperStyle } from "./Wrapper.styled";
+
 function Wrapper({ children }) {
-  return <div className="wrapper">{children}</div>;
+  return <WrapperStyle>{children}</WrapperStyle>;
 }
 export default Wrapper;
