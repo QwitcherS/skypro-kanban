@@ -30,36 +30,38 @@ function Header({ addCard }) {
         <HeaderBlock>
           <HeaderLogo>
             <a href="" target="_self">
-            <HeaderLogoImg src="images/logo.png" alt="logo" />
+              <HeaderLogoImg src="images/logo.png" alt="logo" />
             </a>
           </HeaderLogo>
           <HeaderLogoDark>
             <a href="" target="_self">
-              <HeaderLogoImg  src="images/logo_dark.png" alt="logo" />
+              <HeaderLogoImg src="images/logo_dark.png" alt="logo" />
             </a>
           </HeaderLogoDark>
           <HeaderNav>
-            <HeaderBtnMainNew 
-              id="btnMainNew"
-              onClick={addCard}>
+            <HeaderBtnMainNew id="btnMainNew" onClick={addCard}>
               Создать новую задачу
             </HeaderBtnMainNew>
-            <HeaderUser href="# onClick={togglePopUp}>
+            <HeaderUser href="#" onClick={togglePopUp}>
               Ivan Ivanov
             </HeaderUser>
-            {isOpened &&
+            {isOpened && (
               <HeaderPopUserSet className=" pop-user-set" id="user-set-target">
-              <PopUserSetName>Ivan Ivanov</PopUserSetName>
-              <PopUserSetMail>ivan.ivanov@gmail.com</PopUserSetMail>
-              <PopUserSetTheme>
-                <PopUserSetThemeP>Темная тема</PopUserSetThemeP>
-                <PopUserSetThemeInput type="checkbox" className="checkbox" name="checkbox" />
+                <PopUserSetName>Ivan Ivanov</PopUserSetName>
+                <PopUserSetMail>ivan.ivanov@gmail.com</PopUserSetMail>
+                <PopUserSetTheme>
+                  <PopUserSetThemeP>Темная тема</PopUserSetThemeP>
+                  <PopUserSetThemeInput
+                    type="checkbox"
+                    className="checkbox"
+                    name="checkbox"
+                  />
                 </PopUserSetTheme>
-              <PopUserSetButton type="button" className="_hover03">
-                <PopUserSetButtonA href="#popExit">Выйти</PopUserSetButtonA>
-              </PopUserSetButton>
+                <PopUserSetButton type="button" className="_hover03">
+                  <PopUserSetButtonA href="#popExit">Выйти</PopUserSetButtonA>
+                </PopUserSetButton>
               </HeaderPopUserSet>
-            }
+            )}
           </HeaderNav>
         </HeaderBlock>
       </Container>
