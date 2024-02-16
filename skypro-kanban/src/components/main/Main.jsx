@@ -1,6 +1,6 @@
 import Column from "../Column/Column";
 import { Container } from "../Common/Common.styled";
-import { MainBlock, MainContent, MainStyle } from "./Main.styeled";
+import { MainBlock, MainContent, MainStyle } from "./Main.styled";
 const statusList = [
   "Без статуса",
   "Нужно сделать",
