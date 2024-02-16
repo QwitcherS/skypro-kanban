@@ -1,5 +1,23 @@
 import { useState } from "react";
-
+import { Container } from "../Common/Common.styled";
+import {
+  HeaderBlock,
+  HeaderBtnMainNew,
+  HeaderLogo,
+  HeaderLogoDark,
+  HeaderLogoImg,
+  HeaderNav,
+  HeaderPopUserSet,
+  HeaderStyle,
+  HeaderUser,
+  PopUserSetButton,
+  PopUserSetButtonA,
+  PopUserSetMail,
+  PopUserSetName,
+  PopUserSetTheme,
+  PopUserSetThemeInput,
+  PopUserSetThemeP,
+} from "./Header.styled";
 function Header({ addCard }) {
   const [isOpened, setIsOpened] = useState(false);
 
@@ -7,50 +25,47 @@ function Header({ addCard }) {
     setIsOpened((prev) => !prev);
   }
   return (
-    <header className="header">
-      <div className="container">
-        <div className="header__block">
-          <div className="header__logo _show _light">
+    <HeaderStyle>
+      <Container>
+        <HeaderBlock>
+          <HeaderLogo>
             <a href="" target="_self">
-              <img src="images/logo.png" alt="logo" />
+              <HeaderLogoImg src="images/logo.png" alt="logo" />
             </a>
-          </div>
-          <div className="header__logo _dark">
+          </HeaderLogo>
+          <HeaderLogoDark>
             <a href="" target="_self">
-              <img src="images/logo_dark.png" alt="logo" />
+              <HeaderLogoImg src="images/logo_dark.png" alt="logo" />
             </a>
-          </div>
-          <nav className="header__nav">
-            <button
-              className="header__btn-main-new _hover01"
-              id="btnMainNew"
-              onClick={addCard}>
+          </HeaderLogoDark>
+          <HeaderNav>
+            <HeaderBtnMainNew id="btnMainNew" onClick={addCard}>
               Создать новую задачу
-            </button>
-            <a href="#" className="header__user _hover02" onClick={togglePopUp}>
+            </HeaderBtnMainNew>
+            <HeaderUser href="#" onClick={togglePopUp}>
               Ivan Ivanov
-            </a>
+            </HeaderUser>
             {isOpened && (
-              <div
-                className="header__pop-user-set pop-user-set"
-                // id="user-set-target"
-              >
-                {/* <a href="">x</a> */}
-                <p className="pop-user-set__name">Ivan Ivanov</p>
-                <p className="pop-user-set__mail">ivan.ivanov@gmail.com</p>
-                <div className="pop-user-set__theme">
-                  <p>Темная тема</p>
-                  <input type="checkbox" className="checkbox" name="checkbox" />
-                </div>
-                <button type="button" className="_hover03">
-                  <a href="#popExit">Выйти</a>
-                </button>
-              </div>
+              <HeaderPopUserSet className=" pop-user-set" id="user-set-target">
+                <PopUserSetName>Ivan Ivanov</PopUserSetName>
+                <PopUserSetMail>ivan.ivanov@gmail.com</PopUserSetMail>
+                <PopUserSetTheme>
+                  <PopUserSetThemeP>Темная тема</PopUserSetThemeP>
+                  <PopUserSetThemeInput
+                    type="checkbox"
+                    className="checkbox"
+                    name="checkbox"
+                  />
+                </PopUserSetTheme>
+                <PopUserSetButton type="button" className="_hover03">
+                  <PopUserSetButtonA href="#popExit">Выйти</PopUserSetButtonA>
+                </PopUserSetButton>
+              </HeaderPopUserSet>
             )}
-          </nav>
-        </div>
-      </div>
-    </header>
+          </HeaderNav>
+        </HeaderBlock>
+      </Container>
+    </HeaderStyle>
   );
 }
 export default Header;
